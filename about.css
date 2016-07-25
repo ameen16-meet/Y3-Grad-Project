@@ -1,0 +1,13 @@
+ body {
+background-image:url(student.jpg); 
+background-height:100%;
+}
+
+#center1{
+	line-height:170%;
+}
+
+.font{
+
+font-style:italic;
+}
