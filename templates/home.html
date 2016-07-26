@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html>
-  <head>
- <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>   
-    <ul>
+<head>
+	<title>Home Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" type="text/css" href="style.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="basehtml" type="text/html" href="base.html">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <ul class="navbarul" >
       <li><a class="active" href="#home">Tool-Box</a></li>
-      <li><a href="news">Acount</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li><a href="#acount">Acount</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About Us</a></li>
     </ul>
-<style>
-div.photos {
-	background-color:#8BC34A
-  </body>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1">
+				<div class="leftmenu" style="margin-top:-10px;">
+					
+					<ul>
+				      <li><a href="#trigo">Trigo</a></li>
+				      <li><a href="#calculus">Calculus</a></li>
+				      <li><a href="#algebra">Algebra</a></li>
+				      <li><a href="#giometry">Giometry</a></li>
+				      <li><a href="#integrals">Integrals</a></li>
+				      <li><a href="#inductions">Inductions</a></li>
+				      <li><a href="#probability">Probability</a></li>
+				      <li><a href="#vectors">Vectors</a></li>
+				    </ul>
+
+				</div>
+			</div>
+
+			<!--div class="signupdiv" -->
+			<div class="col-sm-9">
+				
+				<h1 >The Fucking Game</h1>
+
+			</div>
+
+			<div class="col-sm-2">
+				<div style="margin-top:-20px;">
+				  <h2>Sign-Up</h2>
+				  <form role="form">
+					<div class="form-group">
+				      <label for="usr">Name:</label>
+				      <input type="text" class="form-control" id="usr">
+				    </div>
+				    <div class="form-group">
+				      <label for="usr">Email:</label>
+				      <input type="text" class="form-control" id="usr">
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">Password:</label>
+				      <input type="password" class="form-control" id="pwd">
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">Check-Password:</label>
+				      <input type="password" class="form-control" id="checkpwd">
+				    </div>
+				    <div class="form-group">
+				      <input type="submit" value="Sign Up">
+				    </div>
+				  </form>
+				</div>
+
+				<div style="margin-top:-10px;">
+					<h2>Sign-in</h2>
+					<form>
+					  <div class="form-group">
+					     <label for="usr">Email:</label>
+					     <input type="text" class="form-control" id="usr">
+				      </div>
+				      <div class="form-group">
+				      	<label for="pwd">Password:</label>
+				      	<input type="password" class="form-control" id="pwd">
+				      </div>
+				      <div class="form-group">
+				      	<input type="submit" value="Sign In">
+				      </div>
+					</form> 
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
