@@ -15,6 +15,7 @@ def index():
 def subjects():
   return render_template('subjectspage.html')
 
+
  #, users=users)
 
 @app.errorhandler(404)
