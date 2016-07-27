@@ -11,6 +11,10 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
+@app.route('/subjects')
+def subjects():
+  return render_template('subjectspage.html')
+
  #, users=users)
 
 @app.errorhandler(404)
