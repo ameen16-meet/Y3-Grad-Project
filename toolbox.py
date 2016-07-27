@@ -9,7 +9,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return render_template('home.html', users=users)
+  return render_template('index.html')
+
+ #, users=users)
 
 @app.errorhandler(404)
 def page_not_found(e):
