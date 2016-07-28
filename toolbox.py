@@ -7,8 +7,10 @@ import hashlib
 engine = create_engine('sqlite:///flasky.db')
 Base.metadata.create_all(engine)
 Base.metadata.bind = engine
+DBSessionMaker = sessionmaker(bind=engine)
+dbSession = DBSessionMaker()
 
-DBSession = scoped_session(sessionmaker())
+#DBSession = scoped_session(sessionmaker())
 app = Flask(__name__)
 app.secret_key = 'super secret string'
 
@@ -31,6 +33,17 @@ def home():
 	else:
 		user=DBSession.query(User).filter_by(email = email).first()
 		return render_template('blank.html',user = user)
+
+def hash_password(password):
+    return hashlib.md5(password.encode()).hexdigest()
+
+# Returns True if Person with email has password
+def validate(email, password):
+    query = dbSession.query(Person).filter(
+        Person.email.in_([email]),
+        Person.hashed_password.in_([hash_password(password)])
+    )
+return query.first() != None
 
 
 
