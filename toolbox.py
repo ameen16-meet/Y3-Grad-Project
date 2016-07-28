@@ -15,6 +15,9 @@ def index():
 def subjects():
   return render_template('subjectspage.html')
 
+@app.route('/trigolevelsmenu')
+def trigolevelsmenu():
+  return render_template('trigolev.html')
 
  #, users=users)
 
