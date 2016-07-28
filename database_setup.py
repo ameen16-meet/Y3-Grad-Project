@@ -5,13 +5,10 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
+
+
 class User(Base):
     __tablename__ = 'Users'
-    name = Column(String)
     username = Column(String, primary_key=True)
     email = Column(String)
-    password = Column(String)
-
-
-    
-
+    hashed_password = Column(String)
