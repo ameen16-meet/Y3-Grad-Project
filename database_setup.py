@@ -1,36 +1,17 @@
 from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-
+from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-class Person(Base):
-    __tablename__ = 'user'
+class User(Base):
+    __tablename__ = 'Users'
     name = Column(String)
-    id = Column(Integer, primary_key=True)
-    email = Column(email)
-    password = Column(password)
-    XP = Column(Integer)
-    coins = Column(Integer)
-    nationalfrom flask import Flask, render_template
-	app = Flask(__name__)
+    username = Column(String, primary_key=True)
+    email = Column(String)
+    password = Column(String)
 
-#users = 
-#[
-#    {
-#       
-#  }
-#]
 
-@app.route('/')
-def index():
-  return render_template('index.html', users=users)
-
-@app.errorhandler(404)
-def page_not_found(e):
-  return render_template('404.html')
-
-if __name__ == '__main__':
-  app.run(debug=True)ity = Column(String)
-    hometown = Column(String)
+    
 

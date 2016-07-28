@@ -8,7 +8,7 @@ from sqlalchemy import create_engine, MetaData, inspect, Table
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("ERROR: You need to give me a .db file. For example:")
-        print("python print_database flasky.db")
+        print("python print_database crudlab.db")
         sys.exit(1)
 
     db_file_name = sys.argv[1]
@@ -17,8 +17,8 @@ if __name__ == '__main__':
 
     metadata = MetaData(engine)
 
-    DBSessionMaker = sessionmaker(bind=engine)
-    dbSession = DBSessionMaker()
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()
     table_names = inspect(engine).get_table_names()
 
     table_strings = []
@@ -28,18 +28,16 @@ if __name__ == '__main__':
 
         columns = [str(c).split('.')[-1] for c in table.columns]
 
-        table_to_print = dbSession.query(table).all()
+        table_to_print = session.query(table).all()
 
         max_lengths = []
 
-        # If there are no rows, we still want to print the headers
-        if len(table_to_print) == 0:
-            max_lengths = [len(c)+2 for c in columns]
-        else:
-            for title, data in zip(columns, zip(*table_to_print)):
-                max_lengths.append(max([len(repr(d)) for d in data + (title,)]) + 2)
+        for title, data in zip(columns, zip(*table_to_print)):
+            max_lengths.append(max([len(repr(d)) for d in data]) + 2)
         row_format = ''.join(["{:>%d}" % length for length in max_lengths])
 
+        # TODO this will break if the title name is too long OR the column
+        # names are too short (unlikely but possible)
         header = row_format.format(*columns)
         width = len(header)
         title_pad = (width - len(table_name)) // 2
