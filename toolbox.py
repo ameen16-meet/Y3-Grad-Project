@@ -10,9 +10,11 @@ Base.metadata.bind = engine
 DBSessionMaker = sessionmaker(bind=engine)
 dbSession = DBSessionMaker()
 
-#DBSession = scoped_session(sessionmaker())
 app = Flask(__name__)
-app.secret_key = 'super secret string'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
+app.config['SECRET_KEY'] = "random string"
+
+db = SQLAlchemy(app)
 
 def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
@@ -45,20 +47,20 @@ def validate(email, password):
 
 
 
-@app.route('/signin', methods=['GET', 'POST'])
-def signin():
-	error = None
-	if request.method == 'POST':
-		email = str(request.form['email'])
-		password = str(request.form['pwd'])
-		is_valid = validate(email, password)
-		if is_valid == False:
-			error = 'Invalid credentials. Please try again.'
-		else:
-			session['email'] = email
-			return redirect(url_for('home'))
-	session['email'] = None
-	return render_template('subjectspage.html', error = error)
+#@app.route('/signin', methods=['GET', 'POST'])
+#def signin():
+#	error = None
+#	if request.method == 'POST':
+#		email = str(request.form['email'])
+#		password = str(request.form['pwd'])
+#		is_valid = validate(email, password)
+#		if is_valid == False:
+#			error = 'Invalid credentials. Please try again.'
+#		else:
+#			session['email'] = email
+#			return redirect(url_for('home'))
+#	session['email'] = None
+#	return render_template('subjectspage.html', error = error)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -69,17 +71,26 @@ def signup():
 		new_username = request.form['name']
 		new_email = request.form['email']
 		new_password = hash_password(request.form['pwd'])
-		new_password2 = hash_password(request.form['pwd2'])
 		if (new_password == new_password2):
 			new_user= User(name=new_name,email=new_email,password=new_password)
 			DBSession.add(new_user)
 			DBSession.commit()
 			print('after commit')
 			session['email'] = new_email
-			return redirect(url_for('home'))
+			return redirect(url_for('index.html'))
+
+			db.session.add(student)
+         		#db.session.commit()
+         
+        		flash('Record was successfully added')
+         		return redirect(url_for('show_all'))
+   		return render_template('subjectspage.html')
+
 		else:
 			print('fail')
 			return render_template('index.html')
+
+			
 
 
 @app.route('/')
@@ -90,11 +101,13 @@ def index():
 def subjects():
   return render_template('subjectspage.html')
 
-@app.route('/trigolevelsmenu')
+@app.route('/trigolevels')
 def trigolevelsmenu():
   return render_template('trigolev.html')
 
- #, users=users)
+@app.route('/data')
+def show_all():
+   return render_template('show_all.html', students = students.query.all() )
 
 @app.errorhandler(404)
 def page_not_found(e):
