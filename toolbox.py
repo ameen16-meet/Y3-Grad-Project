@@ -37,13 +37,11 @@ def home():
 def hash_password(password):
     return hashlib.md5(password.encode()).hexdigest()
 
-# Returns True if Person with email has password
 def validate(email, password):
     query = dbSession.query(Person).filter(
         Person.email.in_([email]),
         Person.hashed_password.in_([hash_password(password)])
     )
-return query.first() != None
 
 
 
