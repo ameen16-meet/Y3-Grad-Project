@@ -79,7 +79,7 @@ def signup():
 			session['email'] = new_email
 			return redirect(url_for('index.html'))
 			db.session.add(student)
-         		#db.session.commit()
+         		db.session.commit()
          
         		#flash('Record was successfully added')
          		return redirect(url_for('show_all'))
