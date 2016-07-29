@@ -78,11 +78,10 @@ def signup():
 			print('after commit')
 			session['email'] = new_email
 			return redirect(url_for('index.html'))
-
 			db.session.add(student)
          		#db.session.commit()
          
-        		flash('Record was successfully added')
+        		#flash('Record was successfully added')
          		return redirect(url_for('show_all'))
    		return render_template('subjectspage.html')
 
