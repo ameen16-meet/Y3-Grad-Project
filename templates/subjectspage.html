@@ -37,50 +37,49 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<body style="background-color: #e6f2ff;">
+<body style="background-color: #607D8B;">
 
-<body>
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="container">
-          <div class="navbar-header">
-              <a class="navbar-brand page-scroll" href="#page-top">
-                  <i class="fa fa-play-circle"></i> <span class="light">ToolBox<span class="glyphicon glyphicon-wrench"></span>
-              </a>
-          </div>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">ToolBox<span class="glyphicon glyphicon-wrench"></span>
+                </a>
+            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+           <!-- Collect the nav links, forms, and other content for toggling -->
             
             
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="#about">About Us</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" href="#download">Start Learning</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#contact">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#account">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#singout">Sign Out</a>
-            </li>
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#startlearn">Start Learning</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#sign-out">Sign Out</a>
+              </li>
              
-          </ul>
+            </ul>
 
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-  </nav>
+    </nav>
 
   <div class="card" style="width: 230px; height: 280px; float: right; margin-top: 75px; margin-right: 25px;">
       <img class="card-img-top" style="width: 230px; height: 100px; " src="http://snagfilms-a.akamaihd.net/de/b4/e940c9f74ffa88f06d498b662339/1005-lec12-1536x865.jpg" alt="Card image cap">
       <div class="card-block">
         <h5 class="card-title" style="color: black;">Trigonometry</h5>
         <p class="card-text" style="color: black; font-size:60%;">What is trigonometry:  trig is a branch of mathematics that studies relationships involving lengths and angles of triangles.</p>
-        <a href="#" class="btn btn-primary" style="align: bottom;">Play</a>
+        <a href="{{ url_for('trigolevels') }}" class="btn btn-primary" style="align: bottom;">Play</a>
       </div>
   </div>
   <div class="card" style="width: 230px; height: 280px; float: right; margin-top: 75px; margin-right: 25px;">

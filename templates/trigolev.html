@@ -35,37 +35,37 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<body style="background-color: #e6f2ff;">
+<body style="background-color: #607D8B;">
 
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="container">
-          <div class="navbar-header">
-              <a class="navbar-brand page-scroll" href="#page-top">
-                  <i class="fa fa-play-circle"></i> <span class="light">ToolBox<span class="glyphicon glyphicon-wrench"></span>
-              </a>
-          </div>
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">ToolBox<span class="glyphicon glyphicon-wrench"></span>
+                </a>
+            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+           <!-- Collect the nav links, forms, and other content for toggling -->
             
             
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
                 <a class="nav-link active" href="#about">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#download">Start Learning</a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#startlearn">Start Learning</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" href="#contact">Contact Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#account">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#account">Sign Out</a>
-            </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('profile') }}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#sign-out">Sign Out</a>
+              </li>
              
-          </ul>
+            </ul>
 
             <!-- /.navbar-collapse -->
         </div>
@@ -76,7 +76,7 @@
       <img class="card-img-top" style="width: 195px; position: left 2px; " src="http://media.merchantcircle.com/29977484/level%20one_full.jpeg" alt="Card image cap">
       <div class="card-block">
         <h5 style="color: black; ">Level 1</h5>
-        <a href = "{{ url_for('explaination.html') }}" class="btn btn-primary" style="align: bottom; margin-left: -10px; margin-bottom: -0px;">Learn</a>
+        <a href = "{{ url_for('explaination') }}" class="btn btn-primary" style="align: bottom; margin-left: -10px; margin-bottom: -0px;">Learn</a>
         <a href="#" class="btn btn-primary" style="align: bottom; float: right; margin-right: -10px; margin-bottom: -0px;">Play</a>
 
       </div>

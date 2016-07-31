@@ -103,8 +103,24 @@ def subjects():
 
 
 @app.route('/trigolevels')
-def trigolevelsmenu():
+def trigolevels():
   return render_template('trigolev.html')
+
+@app.route('/explaination')
+def explaination():
+  return render_template('explaination.html')
+
+@app.route('/congrats')
+def congrats():
+  return render_template('congrats.html')
+
+@app.route('/questone')
+def questone():
+  return render_template('questone.html')
+
+@app.route('/profile')
+def profile():
+  return render_template('profile.html')
 
 @app.route('/show_all')
 def show_all():
