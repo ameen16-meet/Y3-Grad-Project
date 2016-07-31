@@ -106,6 +106,36 @@ def subjects():
 def trigolevelsmenu():
   return render_template('trigolev.html')
 
+
+
+@app.route('/profile')
+def profile():
+  return render_template('profile.html')
+
+
+@app.route('/subjectspage')
+def subjectspage():
+  return render_template('subjects.html')
+
+
+
+@app.route('/explaination')
+def explaination():
+  return render_template('explaination.html')
+
+
+
+@app.route('/questionone')
+def questionone():
+  return render_template('questionone.html')
+
+
+
+@app.route('/congrats')
+def congrats():
+  return render_template('congrats.html')
+
+
 @app.route('/show_all')
 def show_all():
    return render_template('show_all.html', users = dbSession.query(User).all() )
