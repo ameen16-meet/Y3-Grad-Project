@@ -106,14 +106,42 @@ def subjects():
 def trigolevels():
   return render_template('trigolev.html')
 
+<<<<<<< HEAD
+=======
+
+
+@app.route('/profile')
+def profile():
+  return render_template('profile.html')
+
+
+@app.route('/subjectspage')
+def subjectspage():
+  return render_template('subjects.html')
+
+
+
+>>>>>>> 68402be4180b1de7eaf25e36f2705dbb59d9b55a
 @app.route('/explaination')
 def explaination():
   return render_template('explaination.html')
 
+<<<<<<< HEAD
+=======
+
+
+@app.route('/questionone')
+def questionone():
+  return render_template('questionone.html')
+
+
+
+>>>>>>> 68402be4180b1de7eaf25e36f2705dbb59d9b55a
 @app.route('/congrats')
 def congrats():
   return render_template('congrats.html')
 
+<<<<<<< HEAD
 @app.route('/questone')
 def questone():
   return render_template('questone.html')
@@ -121,6 +149,8 @@ def questone():
 @app.route('/profile')
 def profile():
   return render_template('profile.html')
+=======
+>>>>>>> 68402be4180b1de7eaf25e36f2705dbb59d9b55a
 
 @app.route('/show_all')
 def show_all():
