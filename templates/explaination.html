@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quest Frame One</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" type="text/css" href="style.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<title>Explaination</title>
 </head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -40,6 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 <body style="background-color: #e6f2ff;">
 
 
@@ -76,35 +72,72 @@
         </div>
         <!-- /.container -->
     </nav>
+<br><br><br><br><br>
+
+<div class="container" align="center">
+   <img src="/static/1.png" class="img-rounded" width="1000" height="932">
+   <br>
+   <img src="/static/2.png" class="img-rounded" width="1000" height="932">
+   <br>
+   <img src="/static/3.png" class="img-rounded" width="1000" height="932">
+
+</div>
+<br><br>
+
+<div class="container">
+<a href = "{{ url_for('new') }}" class="btn btn-primary" style="margin-left: 900px">Start Now!</a>
+</div>
+
+<br><br><br>
 
 
-<br><br><br><br><br><br><br><br>
-	<div class="container" align="center">
-		<form role="form">
-			<h5>How many angles does a triangle have, and what is their sum?</h5>
-			<br><br>
-			<div class="form-group">
-				<input type="radio" name="answer" value="a">	3 angles; 270 degrees.
-			</div>
-			<div class="form-group">
-	  			<input type="radio" name="answer" value="b">	4 angles; 180 degrees.
-	  		</div>
-	  		<div class="form-group">
-  				<input type="radio" name="answer" value="c">	3 angles; 180 degrees.
-  			</div>
-  			<div class="form-group">
-  				<input type="radio" name="answer" value="d">	3 angles; 360 degrees.
-  			</div>
-  			<br>
-  			<div class="form-group">
-			<a href = "{{ url_for('congrats.html') }}" class="btn btn-primary">Submit</a>
-  			</div>
-		</form>		
-	</div>
+<!--
+<div class="container">
+<h1>LESSON (1):</h1>
+
+<h2>What is trigonometry?</h2>
+
+<h3> Trigonometry is a branch of mathematics that studies relationships involving lengths and angles of triangles.</h3>
+
+<h4>Angle:</h4>
+
+<h5> The space (usually measured in degrees) between two intersecting lines or surfaces at or close to the point where they meet.</h5>
+
+<h4>Triangle identities:</h4>
+ 
+<h5>There are 3 angles in a triangle (tip: tri-angle, tri = 3). The sum of the angles in a triangle is 180 degrees.</h5>
+
+<h5>There are types of triangles:</h5>
+
+<h5>1. By angles:</h5>
+
+<p>Obtuse triangle: one of the angles is over 90 degrees (only one angle is greater than 90 degrees, and the side that is opposite to the 90 degrees is called a Hypotenuse).
+Acute triangle: all three angles are less than 90 degrees.
+Right triangle: one of the angles is 90 degrees (if this is the case, there can only be one right angle (90)), 
+TIP: the side that is opposite to the 90 degrees is called a hypotenuse.</p>
+
+<h5>2. By side lengths:</h5>
+
+<p>Equilateral triangle: All the sides have equal lengths and all the angles are 60 degrees</p>
+
+<p>b. Isosceles triangle: Two sides are of equal lengths and two of the angles are equal. <br>
+c. Scalene triangle : all sides are of different lengths, and all angles are different. </p>
+
+
+
+
+</div>
+-->
+
+
+
+
+
+
+
+
 
 </body>
-
-
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -132,7 +165,5 @@
 -->
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
-
-
 
 </html>
