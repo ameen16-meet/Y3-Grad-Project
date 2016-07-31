@@ -88,7 +88,11 @@
 <br>
 <h1 style="text-align:center;">Great Job! Keep it up!</h1>
 <br><br>
-<center><img src="/static/check2.png" style="width:304px;height:228px;" ></center>
+<center><img  width="304" height="228" src="{{ url_for('static',filename=check.jpg) }}"></center>
+<br>
+<div class="container" align="center">
+<a href = "{{ url_for('trigolev') }}" class="btn btn-primary">Back</a>
+</div>
 
 </body>
 
