@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {%block title%}
-<title>Main Page</title>
+<title>Tool Box</title>
 {%endblock%}
 
 {%block body%}
@@ -25,7 +25,7 @@
                 <a class="nav-link active" href="#about">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#download">Start Learning</a>
+                <a class="nav-link active" href="#startlearn">Start Learning</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#contact">Contact Us</a>
@@ -59,116 +59,65 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section text-center" style="height: 760px; ">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About ToolBox</h2>
-                <p>Toolbox is an interactive platform for the learning of academic subjects. Our vision is to mitigate the level of education in the world and the middle east specifically through intuitive learning. We aim to help those who lack quality education by offering such a free of charge platform, we recognize that the lack of knowledge worldwide is an epideic deficiency, and see our solution to it as a viable method of solving this problem.</p>
+                <p>Toolbox is an interactive platform for the learning of academic subjects. Our vision is to mitigate the level of education in the world and the middle east specifically through intuitive learning. Who is king? EVYATAR! We aim to help those who lack quality education by offering such a free of charge platform, we recognize that the lack of knowledge worldwide is an epideic deficiency, and see our solution to it as a viable method of solving this problem.</p>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
+    <!-- Start-Learning Section -->
+    <section id="startlearn" class="content-section text-center">
+        <div class="download-section" style="margin-top: -250px; ">
             <div class="container">
                 <div>
                     <h2 style="width: 400px; margin-left: 110px; ">Start Learning</h2>
                     <div class="container">
-	                    <!--<div class="row">
-	                    	<div class="col-lg-12" style="width: 400px; ">
-			                    <p>Sign Up And Join Us Now:</p>
-			                    <form role="form">
-			                    <div class="form-group">
-			                    	<label for="name">Name:</label>
-			                    	<input type="text" class="form-control" id="name">
-			                    </div>
-			                    <div class="form-group">
-			                    	<label for="email">Email address:</label>
-			                    	<input type="email" class="form-control" id="email">
-			                    </div>
-			                    <div class="form-group">
-			                    	<label for="pwd">Password:</label>
-			                    	<input type="password" class="form-control" id="pwd">
-			                    </div>
-			                    <div class="form-group">
-			                    	<label for="pwd">Check-Password:</label>
-			                    	<input type="password" class="form-control" id="pwd">
-		                    	</div>
-		                    <a href="#" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-log-in"></span>Go!</a>
-		                    </form>
-		          			</div>  
-		                    <div class="col-lg-2" style="width: 400px; margin-left: 100px; ">
-			                    <p>Sign In:</p>
-			                    <div class="form-group">
-			                    <label for="email">Email address:</label>
-			                    <input type="email" class="form-control" id="email">
-			                    </div>
-			                    <div class="form-group">
-			                    <label for="pwd">Password:</label>
-			                    <input type="password" class="form-control" id="pwd">
-			                    </div>
-			                    <a href="#" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-log-in"></span> Go!</a>
-			                    </form><br><br>
-		                    </div>
-	          			</div>        
-          			</div>-->
                         <div class="row">
                             <div class="col-lg-12" style="width: 400px; margin-left: 100px; ">
                                 <h5>Sign Up And Join Us Now:</h5>
-                                <form role="form" action = "{{url_for('signup')}}">
+                                <form action = "{{ url_for('subjects') }}"  method = "POST">
 	                                <div class="form-group">
 	                                    <label for="name"></label>
-	                                    <input type="text" class="form-control" id="name" placeholder="Username">
+	                                    <input type="text" class="form-control" name='name' id="name" placeholder="Username">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="email"></label>
-	                                    <input type="email" class="form-control" id="email" placeholder="Email Adress">
+	                                    <input type="email" class="form-control" name='email' id="email" placeholder="Email Adress">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="pwd"></label>
-	                                    <input type="password" class="form-control" id="pwd" placeholder="Password">
+	                                    <label for="password"></label>
+	                                    <input type="password" class="form-control" name='password' id="password" placeholder="Password">
 	                                </div>
-	                                <div class="form-group">
-	                                    <label for="pwd"></label>
-<<<<<<< HEAD
-	                                    <input type="password" class="form-control" id="pwd" placeholder="Re-Enter Password">
-	                                </div> <br>
-	                            		<a href="#" class="btn btn-primary btn-success" style="margin-left: 300px">Go! <span class="glyphicon glyphicon-log-in"></span></a>
-=======
-	                                    <input type="password" class="form-control" id="pwd2" placeholder="Re-Enter Password">
+                                    <div class="form-group">
+                                        <label for="password2"></label>
+                                        <input type="password" class="form-control" name='password2' id="password2" placeholder="Check-Password">
+                                    </div>
+	                                <div class="form-group"> 
+	                                	<button type="submit" class="btn btn-primary" style="margin-left: 300px">Go! <span class="glyphicon glyphicon-log-in"></span></button>
 	                                </div>
-<<<<<<< HEAD
-	                            		<a href="{{ url_for('show_all') }}" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-log-in"></span>Go!</a>
-=======
-	                            		<a href="#" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-log-in"></span>Go!</a>
->>>>>>> 794533148857254f2a0790b8196d3148ccc16962
->>>>>>> 1393aa70ae3c11bf7d430d5fc06df23fc05215ad
                             	</form>
                             </div>  
-                            <div class="col-lg-2" style="width: 400px; margin-left: 110px; ">
+                            <div class="col-lg-2" style="width: 400px; margin-left: 100px; ">
                                 <h5>Sign In:</h5>
-                                <form>
+                                <form action = "{{ url_for('subjects2') }}"  method = "POST">
 	                                <div class="form-group">
 	                                	<label for="email"></label>
-	                                	<input type="email" class="form-control" id="email" placeholder="Email Adress">
+	                                	<input type="email" class="form-control" name="email" id="email" placeholder="Email Adress">
 	                                </div>
 	                                <div class="form-group">
 	                                	<label for="pwd"></label>
-	                                	<input type="password" class="form-control" id="pwd" placeholder="Password">
-	                                </div> <br>
-	                                	<a href="#" class="btn btn-primary btn-success" style="margin-left: 300px">Go! <span class="glyphicon glyphicon-log-in"></span></a>
-
+	                                	<input type="password" class="form-control" name="password" id="password" placeholder="Password">
+	                                </div>
+	                                <div class="form-group"> 
+	                                	<button type="submit" class="btn btn-primary" style="margin-left: 300px">Go! <span class="glyphicon glyphicon-log-in"></span></button>
 	                                </div>
                                 </form>
                             </div>
                         </div>        
                     </div>
-                    <!--
-                    <input type="text" name="username" value="username"><br>
-                    <input type="email" name="email" value="email"><br>
-                    <input type="password" name="password" value="password"><br>
-                    <input type="submit" name="submit" value="submit">-->
                 </div>
             </div>
         </div>

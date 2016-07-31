@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quest Frame One</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" type="text/css" href="style.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<title>Profile</title>
 </head>
+
+
+
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
   <link rel="stylesheet" type="text/css" href="style.css"></link>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,10 +39,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
 <body style="background-color: #e6f2ff;">
 
-
- <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand page-scroll" href="#page-top">
@@ -64,13 +65,10 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#contact">Contact Us</a>
               </li>
-
               <li class="nav-item">
-                <a class="nav-link active" href="#account">Profile</a>
-              </li>             
-              <li class="nav-item">
-                <a class="nav-link active" href="#account">Sign Out</a>
+                <a class="nav-link active" href="#account">SignOut</a>
               </li>
+             
             </ul>
 
             <!-- /.navbar-collapse -->
@@ -79,42 +77,39 @@
     </nav>
 
 
-<br><br><br><br><br><br><br><br>
-	<div class="container" align="center">
-		<form role="form">
-			<h5>How many angles does a triangle have, and what is their sum?</h5>
-			<br><br>
-			<div class="form-group">
-				<input type="radio" name="answer" value="a">	3 angles; 270 degrees.
-			</div>
-			<div class="form-group">
-	  			<input type="radio" name="answer" value="b">	4 angles; 180 degrees.
-	  		</div>
-	  		<div class="form-group">
-  				<input type="radio" name="answer" value="c">	3 angles; 180 degrees.
-  			</div>
-  			<div class="form-group">
-  				<input type="radio" name="answer" value="d">	3 angles; 360 degrees.
-  			</div>
-  			<br>
-  			<div class="form-group">
-			<a href = "{{ url_for('congrats.html') }}" class="btn btn-primary">Submit</a>
-  			</div>
-		</form>		
-	</div>
+<br><br><br><br><br><br><br>
+
+
+
+<div class="container" style="margin-left: 300px;">
+<div class="row">
+     <div class="col-md-4">
+     <div class="imgAbt">
+        <img  width="220" height="220" src="{{ url_for('static',filename=guy.jpg) }}">
+     </div>
+     </div>
+    <div class="col-md-8">
+      <h5>Name:</h5><p>Guy</p>
+      <h5>Date Of Creating The Account:</h5><p>30/07/2016</p>
+      <h5>Status:</h5><p>Beginner</p>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="container" align="center">
+ <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+    Trigonometry: 15%
+  </div>
+</div>
+</div>
 
 </body>
 
-
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-   <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
@@ -133,6 +128,14 @@
 -->
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
+
+
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 
