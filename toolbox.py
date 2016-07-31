@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from database_setup import User, Base
 import hashlib
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
 app.config['SECRET_KEY'] = "random string"
 
