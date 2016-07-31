@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -83,23 +83,26 @@ def validate(email, password):
 
 
 @app.route('/subjects', methods=['GET', 'POST'])
-def signup():
+def subjects():
+	print("entered subjectss")
 	if request.method == 'GET':
-		return render_template('index.html')
+		print("In the get method")
+		return render_template('subjectspage.html')
 	else:
+		print("in the else")
 		new_name = request.form['name']
 		new_email = request.form['email']
+		print("New name:" + str(new_name))
 		new_password = hash_password(request.form['password'])
 		new_password2 = hash_password(request.form['password2'])
 		if (new_password == new_password2):
 			print("creating new user")
 			new_user= User(name=new_name,email=new_email,password=new_password)
-			print(new_user)
-			DBSession.add(new_user)
-			DBSession.commit()
-			print('after commit')
+			print('new user')
+			dbSession.add(new_user)
+			dbSession.commit()
 			session['email'] = new_email
-         
+        
 			flash('Record was successfully added')
 			return render_template('subjectspage.html')
 
@@ -107,16 +110,9 @@ def signup():
 			print('fail')
 			return render_template('index.html')
 
-			
-
-
 @app.route('/')
 def index():
   return render_template('index.html')
-
-@app.route('/subjects')
-def subjects():
-  return render_template('subjectspage.html')
 
 @app.route('/trigolevels')
 def trigolevelsmenu():
