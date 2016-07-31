@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from database_setup import User, Base
 import hashlib
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
 app.config['SECRET_KEY'] = "random string"
 
@@ -54,14 +54,6 @@ def home():
 
 def hash_password(password):
     return hashlib.md5(password.encode()).hexdigest()
-
-# def validate(email, password):
-#     query = dbSession.query(User).filter(
-#         User.email.in_([email]),
-#         User.password.in_([hash_password(password)])
-#     )
-# dbSession
-
 
 @app.route('/subjects2', methods=['GET', 'POST'])
 def subjects2():
