@@ -47,14 +47,8 @@ def validate(email, password):
 
 @app.route('/')
 def home():
-	print('home')
-	email = session.get('email')
-	if not email:
 		return render_template('index.html')
-	else:
-		user=DBSession.query(User).filter_by(email = email).first()
-		return render_template('blank.html',user = user)
-
+		
 def hash_password(password):
     return hashlib.md5(password.encode()).hexdigest()
 
@@ -110,9 +104,6 @@ def subjects():
 			print('fail')
 			return render_template('index.html')
 
-@app.route('/')
-def index():
-  return render_template('index.html')
 
 @app.route('/trigolevels')
 def trigolevelsmenu():
