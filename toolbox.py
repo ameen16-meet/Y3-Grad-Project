@@ -39,7 +39,10 @@ def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
 
 def validate(email, password):
-	query = DBSession.query(User).filter(User.email.in_([email]),User.password.in_([hash_password(password)]))
+	print('email: ', email)
+	print('password: ', password)
+	query = dbSession.query(User).filter(User.email.in_([email]),User.password.in_([hash_password(password)]))
+	print('is valid ', None != query.first())
 	return query.first() != None
 
 
@@ -48,37 +51,39 @@ def validate(email, password):
 @app.route('/')
 def home():
 		return render_template('index.html')
-		
+
 def hash_password(password):
     return hashlib.md5(password.encode()).hexdigest()
 
-def validate(email, password):
-    query = dbSession.query(User).all(
-        User.email.in_([email]),
-        User.hashed_password.in_([hash_password(password)])
-    )
+# def validate(email, password):
+#     query = dbSession.query(User).filter(
+#         User.email.in_([email]),
+#         User.password.in_([hash_password(password)])
+#     )
+# dbSession
 
 
-
-#@app.route('/signin', methods=['GET', 'POST'])
-#def signin():
-#	error = None
-#	if request.method == 'POST':
-#		email = str(request.form['email'])
-#		password = str(request.form['pwd'])
-#		is_valid = validate(email, password)
-#		if is_valid == False:
-#			error = 'Invalid credentials. Please try again.'
-#		else:
-#			session['email'] = email
-#			return redirect(url_for('home'))
-#	session['email'] = None
-#	return render_template('subjectspage.html', error = error)
+@app.route('/subjects2', methods=['GET', 'POST'])
+def subjects2():
+	error = None
+	if request.method == 'POST':
+		email = str(request.form['email'])
+		password = str(request.form['password'])
+		is_valid = validate(email, password)
+		print (is_valid)
+		if False == is_valid:
+			error = 'Invalid credentials. Please try again.'
+			session['email'] = None
+			return render_template('index.html', error = error)
+		else:
+			session['email'] = email
+			session['password'] = password
+			return render_template('subjectspage.html')
 
 
 @app.route('/subjects', methods=['GET', 'POST'])
 def subjects():
-	print("entered subjectss")
+	print("entered subjects")
 	if request.method == 'GET':
 		print("In the get method")
 		return render_template('subjectspage.html')

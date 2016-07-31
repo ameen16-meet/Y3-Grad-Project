@@ -102,17 +102,17 @@
                             </div>  
                             <div class="col-lg-2" style="width: 400px; margin-left: 100px; ">
                                 <h5>Sign In:</h5>
-                                <form>
+                                <form action = "{{ url_for('subjects2') }}"  method = "POST">
 	                                <div class="form-group">
 	                                	<label for="email"></label>
-	                                	<input type="email" class="form-control" id="email" placeholder="Email Adress">
+	                                	<input type="email" class="form-control" name="email" id="email" placeholder="Email Adress">
 	                                </div>
 	                                <div class="form-group">
 	                                	<label for="pwd"></label>
-	                                	<input type="password" class="form-control" id="pwd" placeholder="Password">
+	                                	<input type="password" class="form-control" name="password" id="password" placeholder="Password">
 	                                </div>
 	                                <div class="form-group"> 
-	                                	<a href="#" class="btn btn-primary" style="margin-left: 300px">Go! <span class="glyphicon glyphicon-log-in"></span></a>
+	                                	<button type="submit" class="btn btn-primary" style="margin-left: 300px">Go! <span class="glyphicon glyphicon-log-in"></span></button>
 	                                </div>
                                 </form>
                             </div>
