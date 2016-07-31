@@ -4,8 +4,7 @@
    <body>
       
       <h3>
-         <a href = "{{ url_for('show_all') }}">Comments - Flask 
-            SQLAlchemy example</a>
+         <a href = "{{ url_for('show_all') }}">Check</a>
       </h3>
       
       <hr/>
@@ -13,26 +12,23 @@
          {{ message }}
       {%- endfor %}
 		
-      <h3>Students (<a href = "{{ url_for('new') }}">Add Student
-         </a>)</h3>
+      <h3> Users </h3>
       
       <table>
          <thead>
             <tr>
                <th>Name</th>
-               <th>City</th>
-               <th>Address</th>
-               <th>Pin</th>
+               <th>Email</th>
+               <th>Password</th>
             </tr>
          </thead>
          
          <tbody>
-            {% for student in students %}
+            {% for user in User %}
                <tr>
-                  <td>{{ student.name }}</td>
-                  <td>{{ student.city }}</td>
-                  <td>{{ student.addr }}</td>
-                  <td>{{ student.pin }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.password }}</td>
                </tr>
             {% endfor %}
          </tbody>

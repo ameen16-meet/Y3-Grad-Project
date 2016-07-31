@@ -1,8 +1,16 @@
 from flask import Flask, render_template, redirect, url_for, request, session
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
-from database_setup import Base, User
-from sqlalchemy.orm import scoped_session, sessionmaker
+from database_setup import User, Base
 import hashlib
+
+app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
+app.config['SECRET_KEY'] = "random string"
+
 
 engine = create_engine('sqlite:///flasky.db')
 Base.metadata.create_all(engine)
@@ -10,11 +18,22 @@ Base.metadata.bind = engine
 DBSessionMaker = sessionmaker(bind=engine)
 dbSession = DBSessionMaker()
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
-app.config['SECRET_KEY'] = "random string"
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
+
+# class user(db.Model):
+# 	id = db.Column('user_id', db.Integer, primary_key = True)
+# 	name = db.Column(db.String(100))
+# 	email = db.Column(db.String(50))  
+# 	password = db.Column(db.String(200))
+
+# db.create_all()
+
+# def __init__(self, name, email, password):
+# 	self.name = name
+# 	self.email = email
+# 	self.password = password
+
 
 def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
@@ -40,9 +59,9 @@ def hash_password(password):
     return hashlib.md5(password.encode()).hexdigest()
 
 def validate(email, password):
-    query = dbSession.query(Person).filter(
-        Person.email.in_([email]),
-        Person.hashed_password.in_([hash_password(password)])
+    query = dbSession.query(User).all(
+        User.email.in_([email]),
+        User.hashed_password.in_([hash_password(password)])
     )
 
 
@@ -63,27 +82,26 @@ def validate(email, password):
 #	return render_template('subjectspage.html', error = error)
 
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/subjects', methods=['GET', 'POST'])
 def signup():
 	if request.method == 'GET':
 		return render_template('index.html')
 	else:
-		new_username = request.form['name']
+		new_name = request.form['name']
 		new_email = request.form['email']
-		new_password = hash_password(request.form['pwd'])
+		new_password = hash_password(request.form['password'])
+		new_password2 = hash_password(request.form['password2'])
 		if (new_password == new_password2):
+			print("creating new user")
 			new_user= User(name=new_name,email=new_email,password=new_password)
+			print(new_user)
 			DBSession.add(new_user)
 			DBSession.commit()
 			print('after commit')
 			session['email'] = new_email
-			return redirect(url_for('index.html'))
-			db.session.add(student)
-         		db.session.commit()
          
-        		#flash('Record was successfully added')
-         		return redirect(url_for('show_all'))
-   		return render_template('subjectspage.html')
+			flash('Record was successfully added')
+			return render_template('subjectspage.html')
 
 		else:
 			print('fail')
@@ -104,9 +122,9 @@ def subjects():
 def trigolevelsmenu():
   return render_template('trigolev.html')
 
-@app.route('/data')
+@app.route('/show_all')
 def show_all():
-   return render_template('show_all.html', students = students.query.all() )
+   return render_template('show_all.html', users = dbSession.query(User).all() )
 
 @app.errorhandler(404)
 def page_not_found(e):
