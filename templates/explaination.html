@@ -1,40 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Explaination</title>
-</head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% extends "base.html" %}
 
-  <link rel="stylesheet" type="text/css" href="style.css"></link>
+{%block title%}
+<title>Subjects</title>
+{%endblock%}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-
-    <!-- Bootstrap Core CSS 
-    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-
-   <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/static/http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="/static/http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <!-- Theme CSS -->
-    <link href="/static/css/grayscale.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+{%block body%}
 
 <body style="background-color: #607D8B;">
 
@@ -76,95 +46,21 @@
 <br><br><br><br><br>
 
 <div class="container" align="center">
-    <img  width="1000" height="932" src="{{ url_for('static',filename=1.jpg) }}">
-   <br>
-    <img  width="1000" height="932" src="{{ url_for('static',filename=2.jpg) }}">
-   <br>
-    <img  width="1000" height="932" src="{{ url_for('static',filename=3.jpg) }}">
+    <img  width="1150" height="932" src="/static/1.png">
+   <br><br>
+    <img  width="1150" height="932" src="/static/2.png">
+   <br><br>
+    <img  width="1150" height="932" src="/static/3.png">
 
 </div>
 <br><br>
 
 <div class="container">
-<a href = "{{ url_for('questone') }}" class="btn btn-primary" style="margin-left: 900px">Start Now!</a>
+  <a href = "{{ url_for('questone') }}" class="btn btn-primary" style="margin-left: 900px">Start Now!</a>
 </div>
 
 <br><br><br>
 
-
-<!--
-<div class="container">
-<h1>LESSON (1):</h1>
-
-<h2>What is trigonometry?</h2>
-
-<h3> Trigonometry is a branch of mathematics that studies relationships involving lengths and angles of triangles.</h3>
-
-<h4>Angle:</h4>
-
-<h5> The space (usually measured in degrees) between two intersecting lines or surfaces at or close to the point where they meet.</h5>
-
-<h4>Triangle identities:</h4>
- 
-<h5>There are 3 angles in a triangle (tip: tri-angle, tri = 3). The sum of the angles in a triangle is 180 degrees.</h5>
-
-<h5>There are types of triangles:</h5>
-
-<h5>1. By angles:</h5>
-
-<p>Obtuse triangle: one of the angles is over 90 degrees (only one angle is greater than 90 degrees, and the side that is opposite to the 90 degrees is called a Hypotenuse).
-Acute triangle: all three angles are less than 90 degrees.
-Right triangle: one of the angles is 90 degrees (if this is the case, there can only be one right angle (90)), 
-TIP: the side that is opposite to the 90 degrees is called a hypotenuse.</p>
-
-<h5>2. By side lengths:</h5>
-
-<p>Equilateral triangle: All the sides have equal lengths and all the angles are 60 degrees</p>
-
-<p>b. Isosceles triangle: Two sides are of equal lengths and two of the angles are equal. <br>
-c. Scalene triangle : all sides are of different lengths, and all angles are different. </p>
-
-
-
-
-</div>
--->
-
-
-
-
-
-
-
-
-
 </body>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-   <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-
-
-      <!-- jQuery -->
-<!--    <script src="/static/vendor/jquery/jquery.js"></script>
--->
-    <!-- Bootstrap Core JavaScript -->
-<!--    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
--->
-    <!-- Plugin JavaScript -->
-   <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>-->
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ //////////////
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
--->
-    <!-- Theme JavaScript -->
-    <script src="js/grayscale.min.js"></script>
-
-</html>
+{%endblock%}
