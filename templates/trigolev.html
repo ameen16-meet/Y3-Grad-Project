@@ -24,7 +24,7 @@
                 <a class="nav-link active" href="#about">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#{{ url_for('questionone') }}">Start Learning</a>
+                <a class="nav-link active" href="{{ url_for('questone') }}">Start Learning</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#contact">Contact Us</a>
@@ -48,7 +48,7 @@
       <div class="card-block">
         <h5 style="color: black; ">Level 1</h5>
         <a href = "{{ url_for('explaination') }}" class="btn btn-primary" style="align: bottom; margin-left: -10px; margin-bottom: -0px;">Learn</a>
-        <a href="#" class="btn btn-primary" style="align: bottom; float: right; margin-right: -10px; margin-bottom: -0px;">Play</a>
+        <a href="{{ url_for('questone') }}" class="btn btn-primary" style="align: bottom; float: right; margin-right: -10px; margin-bottom: -0px;">Play</a>
 
       </div>
   </div>

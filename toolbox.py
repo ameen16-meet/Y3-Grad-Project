@@ -135,6 +135,9 @@ def congrats():
 def questone():
   return render_template('questone.html')
 
+@app.route('/sing_out')
+def sing_out():
+  return render_template('index.html')
 
 @app.route('/show_all')
 def show_all():
